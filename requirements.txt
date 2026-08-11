@@ -1,0 +1,20 @@
+# Core pipeline
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+scikit-learn>=1.3
+statsmodels>=0.14
+scipy>=1.10
+
+# Feature-based model. If this is not installed the pipeline falls back to
+# scikit-learn's HistGradientBoostingRegressor automatically.
+xgboost>=2.0
+
+# Foundation model (Chronos). These pull in a large PyTorch install and the
+# model weights are downloaded from the Hugging Face hub on first use.
+torch>=2.2
+chronos-forecasting>=1.5
+
+# Notebooks and tests
+jupyter>=1.0
+pytest>=7.4

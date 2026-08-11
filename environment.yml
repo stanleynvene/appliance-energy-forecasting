@@ -1,0 +1,18 @@
+name: appliance-energy
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy>=1.24
+  - pandas>=2.0
+  - matplotlib>=3.7
+  - scikit-learn>=1.3
+  - statsmodels>=0.14
+  - scipy>=1.10
+  - xgboost>=2.0
+  - jupyter
+  - pytest
+  - pip
+  - pip:
+      - torch>=2.2
+      - chronos-forecasting>=1.5
