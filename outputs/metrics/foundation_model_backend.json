@@ -1,0 +1,6 @@
+{
+  "requested_backend": "chronos2",
+  "backend_used": "amazon/chronos-2",
+  "used_fallback": false,
+  "fallback_reason": null
+}

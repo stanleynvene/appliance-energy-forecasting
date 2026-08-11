@@ -1,0 +1,17 @@
+{
+  "run_seconds": 360.7,
+  "n_hourly_observations": 3290,
+  "train_start": "2016-01-11 17:00:00",
+  "train_end": "2016-05-13 18:00:00",
+  "test_start": "2016-05-13 19:00:00",
+  "test_end": "2016-05-27 18:00:00",
+  "horizon_hours": 24,
+  "n_origins": 14,
+  "mase_scale_seasonal_naive_24h": 53.42377701934016,
+  "feature_model_backend": "xgboost",
+  "foundation_backend_used": "amazon/chronos-2",
+  "foundation_used_fallback": false,
+  "best_benchmark": "seasonal_mean_profile",
+  "best_overall": "feature_model_one_step",
+  "random_state": 0
+}

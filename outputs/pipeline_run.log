@@ -1,0 +1,50 @@
+[1/9] Loading and preparing data
+      hourly observations: 3290
+      train: 2016-01-11 17:00:00 to 2016-05-13 18:00:00 (2954 obs)
+      test:  2016-05-13 19:00:00 to 2016-05-27 18:00:00 (336 obs)
+      evaluation: 14 origins x 24-hour horizon
+[2/9] Benchmark forecasts
+[3/9] SARIMAX models (this is the slowest stage)
+      sarimax_target_only: fitted and backtested in 39.7s (AIC 32229.7)
+      sarimax_calendar: fitted and backtested in 45.3s (AIC 32235.7)
+      sarimax: fitted and backtested in 137.7s (AIC 32242.4)
+[4/9] Feature-based models (backend: xgboost)
+      operational design matrix: 74628 rows x 54 features
+[5/9] Foundation model (requested backend: chronos2)
+      Chronos unavailable; documented offline fallback used.
+      reason: backend explicitly set to fallback
+[6/9] Evaluating forecasts
+
+                    model    MAE    RMSE  MASE    Bias  MASE_vs_best_benchmark
+   feature_model_one_step 31.938  53.707 0.598   4.250                   0.839
+         foundation_model 33.078  67.201 0.619 -21.798                   0.869
+      sarimax_target_only 36.452  64.589 0.682  -5.679                   0.958
+         sarimax_calendar 37.512  64.543 0.702  -5.709                   0.986
+                  sarimax 37.945  65.570 0.710  -6.487                   0.997
+    seasonal_mean_profile 38.058  63.738 0.712  -3.390                   1.000
+            feature_model 38.352  66.191 0.718  -5.194                   1.008
+feature_model_conditional 40.303  65.281 0.754   3.854                   1.059
+    seasonal_naive_weekly 43.457  81.409 0.813 -13.160                   1.142
+     seasonal_naive_daily 48.309  85.565 0.904   1.751                   1.269
+                     mean 50.258  74.938 0.941  -3.287                   1.321
+                    naive 85.551 110.390 1.601  50.977                   2.248
+                    drift 85.802 110.679 1.606  51.368                   2.255
+
+      strongest benchmark: seasonal_mean_profile (MASE 0.712)
+[7/9] Single 336-step-ahead run (demo-pipeline design)
+
+                model     MAE    RMSE  MASE    Bias
+     foundation_model  32.398  65.432 0.606 -20.895
+              sarimax  37.639  65.010 0.705  -4.445
+seasonal_mean_profile  38.087  63.594 0.713  -3.063
+        feature_model  38.352  66.191 0.718  -5.194
+seasonal_naive_weekly  42.634  79.290 0.798 -10.818
+                 mean  50.319  74.906 0.942  -3.109
+ seasonal_naive_daily  86.959 129.232 1.628  64.013
+                naive 250.640 258.820 4.692 247.763
+                drift 266.373 274.611 4.986 264.501
+
+[8/9] Writing figures
+[9/9] Writing forecasts and metrics
+
+Done in 270.1s. Outputs written to /home/claude/appliance-energy-forecasting/outputs

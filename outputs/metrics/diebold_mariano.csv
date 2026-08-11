@@ -1,0 +1,8 @@
+model,reference,DM_statistic,p_value,better_than_reference
+seasonal_naive_daily,seasonal_mean_profile,-2.3455628921164697,0.01899837308229002,False
+seasonal_naive_weekly,seasonal_mean_profile,-1.4727071284924051,0.14083002361070474,False
+sarimax,seasonal_mean_profile,-0.015366622988563797,0.9877396912784338,False
+feature_model,seasonal_mean_profile,0.6220509855020085,0.5339083429880094,False
+foundation_model,seasonal_mean_profile,2.359964834304266,0.01827666748447565,True
+feature_model_conditional,seasonal_mean_profile,-1.3387066516180741,0.1806661900221349,False
+sarimax_calendar,seasonal_mean_profile,0.3217174701926464,0.7476667416349803,False
